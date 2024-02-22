@@ -3,6 +3,11 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
+    "@emotion/react": "^11.11.3",
+    "@emotion/styled": "^11.11.0",
+    "@mui/icons-material": "^5.15.4",
+    "@mui/material": "^5.15.4",
+    "@reduxjs/toolkit": "^1.9.1",
     "@testing-library/jest-dom": "^5.17.0",
     "@testing-library/react": "^13.4.0",
     "@testing-library/user-event": "^13.5.0",
@@ -10,9 +15,21 @@
     "@types/node": "^16.18.79",
     "@types/react": "^18.2.55",
     "@types/react-dom": "^18.2.18",
+    "axios": "^1.2.2",
+    "dayjs": "^1.11.7",
     "react": "^18.2.0",
+    "react-circular-progressbar": "^2.1.0",
     "react-dom": "^18.2.0",
+    "react-icons": "^4.7.1",
+    "react-infinite-scroll-component": "^6.1.0",
+    "react-lazy-load-image-component": "^1.5.6",
+    "react-player": "^2.11.0",
+    "react-redux": "^8.0.5",
+    "react-responsive-carousel": "^3.2.23",
+    "react-router-dom": "^6.6.2",
     "react-scripts": "5.0.1",
+    "react-select": "^5.7.0",
+    "sass": "^1.57.1",
     "typescript": "^4.9.5",
     "web-vitals": "^2.1.4"
   },
@@ -39,5 +56,16 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
+  },
+  "devDependencies": {
+    "@types/react-lazy-load-image-component": "^1.6.3"
+  },
+  "jest": {
+    "transformIgnorePatterns": [
+       "/node_modules/(?!(axios)/)"
+     ],
+     "moduleNameMapper": {
+       ".+\\.(css|styl|less|sass|scss|png|jpg|ttf|woff|woff2)$": "identity-obj-proxy"
+     }
   }
 }
