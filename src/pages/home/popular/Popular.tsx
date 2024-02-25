@@ -6,7 +6,7 @@ import Carousel from '../../../components/carousel/Carousel';
 const Popular: React.FC = () => {
   const { data} = useFetchData('/movie/popular');
   return (
-    <div className="carouselSection">
+    <div className="carouselSection" data-testid="popular">
       <ContentWrapper>
         <span className="carouselTitle">Popular</span>
       </ContentWrapper>

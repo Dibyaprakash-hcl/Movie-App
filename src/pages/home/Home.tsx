@@ -10,7 +10,7 @@ import TopBar from "../../components/TopBar";
 const Home = () => {
     return (
         <div className="homePage">
-            <TopBar data-testid="topbar"/>
+            <TopBar />
             <Banner/>
             <Trending/>
             <Popular/>

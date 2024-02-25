@@ -10,7 +10,7 @@ const TopBar: FC<TopBarProps> = () => {
     const [sidebarOpen, setSidebarOpen] = useState<boolean>(false);
     const toggleSidebar = () => setSidebarOpen(!sidebarOpen);
   return (
-    <>
+    <div data-testid="topBar">
         <Sidebar open={sidebarOpen} toggleSidebar={toggleSidebar} />
         <AppBar elevation={0} sx={{ zIndex: 9999, "backgroundColor": "#020c1b"}} position="static">
           <Toolbar sx={{ alignItems: "center", justifyContent: "space-between" }}>
@@ -55,7 +55,7 @@ const TopBar: FC<TopBarProps> = () => {
             </Stack>            
           </Toolbar>
         </AppBar>    
-    </>
+    </div>
   )
 }
 export default TopBar;

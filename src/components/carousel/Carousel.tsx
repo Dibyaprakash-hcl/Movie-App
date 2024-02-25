@@ -33,7 +33,7 @@ const Carousel = (data?:any) => {
     }
     console.log(data,"zz")
   return (
-    <div className='carousel'>
+    <div className='carousel' data-testid="carousel">
       <ContentWrapper>
         <BsFillArrowLeftCircleFill className='carouselLeftNav arrow' onClick={()=>navigation("left")} />
         <BsFillArrowRightCircleFill className='carouselRighttNav arrow' onClick={() => navigation("right")} />

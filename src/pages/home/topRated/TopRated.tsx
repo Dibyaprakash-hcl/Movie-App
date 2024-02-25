@@ -6,7 +6,7 @@ interface TopRatedProps {}
 const TopRated: FC<TopRatedProps> = () => {
   const { data} = useFetchData(`/movie/top_rated`);
   return (
-    <div className="carouselSection">
+    <div className="carouselSection" data-testid="topRated">
       <ContentWrapper>
         <span className="carouselTitle">Top Rated</span>
       </ContentWrapper>

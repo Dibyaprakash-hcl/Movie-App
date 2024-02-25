@@ -8,7 +8,7 @@ const Upcoming : React.FC= () => {
     const {data} = useFetchData(`/movie/upcoming`);
 
   return (
-    <div className="carouselSection">
+    <div className="carouselSection" data-testid="upcoming">
         <ContentWrapper>
             <span className="carouselTitle">Upcoming</span>
         </ContentWrapper>

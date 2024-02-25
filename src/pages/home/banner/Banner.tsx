@@ -31,8 +31,8 @@ const Banner: FC<BannerProps> = () => {
   }
 
   return (
-    <div className='heroBanner'>
-      <div className="backdrop-img">
+    <div className='heroBanner' data-testid="banner">
+      <div className="backdrop-img" data-testid="backdropimage">
         {/* <Img src={background} /> */}
         <Img src="https://th.bing.com/th?id=OIP.zKBC4GRtHTHB17fFZkKEVgHaEK&w=333&h=187&c=8&rs=1&qlt=90&o=6&dpr=1.5&pid=3.1&rm=2" />
       </div>

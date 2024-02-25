@@ -7,7 +7,7 @@ const Trending: React.FC = () => {
   const { data } = useFetchData(`/trending/movie/day`);
   console.log(data?.results,"za")
   return (
-    <div className="carouselSection">
+    <div className="carouselSection" data-testid="trending">
       <ContentWrapper>
         <span className="carouselTitle">Trending</span>
       </ContentWrapper>
