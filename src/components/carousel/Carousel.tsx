@@ -37,8 +37,8 @@ const Carousel = (data?:any) => {
       <ContentWrapper>
         <BsFillArrowLeftCircleFill className='carouselLeftNav arrow' onClick={()=>navigation("left")} />
         <BsFillArrowRightCircleFill className='carouselRighttNav arrow' onClick={() => navigation("right")} />
-        { (
-            <div className="carouselItems" ref={carouselContainer}>
+        { data.data && Array.isArray(data.data) && (
+            <div className="carouselItems" ref={carouselContainer} data-testid=" ">
                 
                 { data.data?.map((item:any)=>{
                     //let posterUrl = item.poster_path ? url.poster + item.poster_path : NoPoster;
