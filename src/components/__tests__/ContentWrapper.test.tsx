@@ -1,4 +1,4 @@
-import {fireEvent, render,screen, waitFor,getByTextId} from "@testing-library/react";
+import {fireEvent, render,screen, waitFor} from "@testing-library/react";
 import {MemoryRouter} from 'react-router-dom';
 import ContentWrapper from "../contentWrapper/ContentWrapper";
 

@@ -6,13 +6,17 @@ import noResults from "../../constants/no-results.png";
 import { fetchDataFromApi } from "../../service/api";
 import ContentWrapper from "../../components/contentWrapper/ContentWrapper";
 import MovieCard from "../../components/movieCard/MovieCard";
+import Spinner from "../../components/spinner/Spinner";
 import TopBar from "../../components/TopBar";
-interface SearchResultProps {}
+interface SearchResultProps {
+  total_results?:number,
+  total_pages?:number
+}
 const SearchResult: React.FC<SearchResultProps> = () => {
   const [data, setData] = useState<any>(null);
   const [pageNum, setPageNum] = useState<number>(1);
   const [loading, setLoading] = useState<boolean>(false);
-  const { query } = useParams();
+  const { query } = useParams<{ query: string }>();
   const fetchIntialData = () => {
     setLoading(true);
     fetchDataFromApi(`/search/multi?query=${query}&page=${pageNum}`).then(
@@ -29,7 +33,7 @@ const SearchResult: React.FC<SearchResultProps> = () => {
         if (data?.results) {
           setData({
             ...data,
-            results: [...data?.results, ...res.results],
+            results: [...data?.results, ...res?.results],
           });
         } else {
           setData(res);
@@ -39,15 +43,17 @@ const SearchResult: React.FC<SearchResultProps> = () => {
     );
   };
   useEffect(() => {
+    setPageNum(1);
     fetchIntialData();
   }, [query]);
   return (
     <>
     <TopBar/>
     <div className="searchResultsPage">
+      {loading && <Spinner initial={true} />}
       {!loading && (
         <ContentWrapper>
-          {data?.results.length > 0 ? (
+          {data?.results?.length > 0 ? (
             <>
               <div className="pageTitle">
                 {`Search ${
@@ -56,10 +62,10 @@ const SearchResult: React.FC<SearchResultProps> = () => {
               </div>
               <InfiniteScroll
                 className="content"
-                dataLength={data?.results.length || []}
+                dataLength={data?.results?.length || []}
                 next={fetchNextPageData}
-                hasMore={false}
-                loader={undefined} 
+                hasMore={pageNum <= data?.total_pages}
+                loader={<Spinner initial={true}/>} 
               >
                 {data?.results.map((item: any, index: number) => {
                   if (item.media_type === "person") return;

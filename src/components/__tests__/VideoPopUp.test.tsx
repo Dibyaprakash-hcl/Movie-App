@@ -1,4 +1,4 @@
-import {fireEvent, render,screen, waitFor,getByTextId, getByTestId} from "@testing-library/react";
+import {fireEvent, render,screen, waitFor, getByTestId} from "@testing-library/react";
 import {MemoryRouter} from 'react-router-dom';
 import VideoPopup from "../videoPopup/VideoPopup";
 

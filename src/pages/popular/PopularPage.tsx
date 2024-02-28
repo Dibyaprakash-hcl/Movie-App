@@ -9,9 +9,10 @@ import TopBar from "../../components/TopBar";
 interface MovieData {
     results?: any;
     total_pages?:number;
+    total_results?:number;
   }
   
-  const PopularPage: React.FC = () => {
+  const PopularPage: React.FC <MovieData>= () => {
     const [data, setData] = useState<MovieData | null>(null);
     const [pageNum, setPageNum] = useState<number>(1);
     const [loading, setLoading] = useState<boolean>(false);

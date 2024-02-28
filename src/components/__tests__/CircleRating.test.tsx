@@ -1,4 +1,4 @@
-import {fireEvent, render,screen, waitFor,getByTextId} from "@testing-library/react";
+import {fireEvent, render,screen, waitFor} from "@testing-library/react";
 import {MemoryRouter} from 'react-router-dom';
 import CircleRating from "../rating/CircleRating";
 
@@ -8,7 +8,7 @@ import CircleRating from "../rating/CircleRating";
 // })
 describe("Test the CircleRating Component",()=>{
     test('Display received rating value',()=>{
-            const {getByRole} = render(<MemoryRouter> <CircleRating rating={3} /> </MemoryRouter>);
+            const {getByRole} = render(<MemoryRouter> <CircleRating rating={"3"} /> </MemoryRouter>);
             expect(screen.getByText('3')).toBeInTheDocument();
     })
 

@@ -11,7 +11,7 @@ interface MovieData {
     total_pages?:number;
   }
   
-  const TopRatedPage: React.FC = () => {
+  const TopRatedPage: React.FC<MovieData> = () => {
     const [data, setData] = useState<MovieData | null>(null);
     const [pageNum, setPageNum] = useState<number>(1);
     const [loading, setLoading] = useState<boolean>(false);

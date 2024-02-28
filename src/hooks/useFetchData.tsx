@@ -9,6 +9,7 @@ const useFetchData = (url: string): FetchDataResponse => {
   const [data, setData] = useState<any>(null);
   const [loading, setLoading] = useState<boolean | string>();
   const [error, setError] = useState<string | null>(null);
+  console.log(typeof(data),"ap")
   useEffect(() => {
     setLoading("Loading...");
     setData(null);
